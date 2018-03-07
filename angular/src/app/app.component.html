@@ -3,8 +3,10 @@
     <input type="text" [(ngModel)]="input" name="input">
     <button type="submit">+</button>
   </form>
-  <div class="todo" *ngFor="let todo of todos">
+  <div class="todo" *ngFor="let todo of todos;let i = index;">
     {{todo}}
     <button (click)="delete(todo)">delete</button>
+    <button (click)="move(-1, i)">up</button>
+    <button (click)="move(1, i)">down</button>
   </div>
 </div>
