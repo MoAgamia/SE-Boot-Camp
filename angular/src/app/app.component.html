@@ -1,0 +1,10 @@
+<div class="col">
+  <form (ngSubmit)="submit()" class="new-container">
+    <input type="text" [(ngModel)]="input" name="input">
+    <button type="submit">+</button>
+  </form>
+  <div class="todo" *ngFor="let todo of todos">
+    {{todo}}
+    <button (click)="delete(todo)">delete</button>
+  </div>
+</div>
