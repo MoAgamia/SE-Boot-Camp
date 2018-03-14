@@ -1,13 +1,13 @@
 <template>
   <section class="todo-section">
     <h1>{{ header }}</h1>
-    <input type="text" name="todo-input" v-model="listText">
-    <lists/>
+    <lists selectList/>
   </section>
 </template>
 
 <script>
 import Lists from './Lists'
+import Tasks from './Tasks'
 import api from '../api/api.js'
 
 export default {
@@ -15,11 +15,17 @@ export default {
   data () {
     return {
       header: 'To Do List',
-      listText:''
+      selectedList: -1,
     }
   },
   components:{
-    Lists
+    Lists,
+    Tasks
+  },
+  methods:{
+    selectList(listId){
+      this.selectedList = listId;
+    }
   }
 }
 </script>
