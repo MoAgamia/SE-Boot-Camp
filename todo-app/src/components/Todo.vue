@@ -2,12 +2,13 @@
   <section class="todo-section">
     <h1>{{ header }}</h1>
     <input type="text" name="todo-input" v-model="listText">
-    <Lists/>
+    <lists/>
   </section>
 </template>
 
 <script>
 import Lists from './Lists'
+import api from '../api/api.js'
 
 export default {
   name: 'Todo',
@@ -17,7 +18,9 @@ export default {
       listText:''
     }
   },
-  components:{Lists}
+  components:{
+    Lists
+  }
 }
 </script>
 
