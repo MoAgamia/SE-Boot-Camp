@@ -18,7 +18,7 @@ export default {
   name: "App",
   data() {
     return {
-      header: "simple to-do app"
+      header: "todos app"
     };
   },
   components: {
@@ -57,6 +57,11 @@ ul {
   padding: 0;
 }
 
+input{
+    background: none;
+    border: none;
+    text-align: center;
+}
 #todos-app {
   font-family: "Lato", sans-serif;
   text-align: center;
@@ -76,8 +81,9 @@ ul {
 }
 .todos-header > h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 80px;
   font-style: italic;
+  font-weight: 300;
 }
 
 .todos-section {

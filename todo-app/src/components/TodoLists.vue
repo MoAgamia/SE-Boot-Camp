@@ -8,7 +8,7 @@
             <!-- List name -->
             <label v-if="list !== editedList" 
                   class = "single-list-name"
-                  @dblclick="editList(list)">{{ list.name }}
+                  @click="editList(list)">{{ list.name }}
             </label>
             <!-- Edit list name -->
             <input v-else
@@ -17,7 +17,8 @@
                 v-model="list.name"
                 @blur="doneEdit(index, list)"
                 @keyup.enter="doneEdit(index, list)"
-                @keyup.esc="cancelEditList">
+                @keyup.esc="cancelEditList"
+                maxlength="10">
             <!-- Remove list button -->
             <button type="button" class="remove-btn" @click="deleteList(index, list._id)">
               <img src="../../static/images/remove.svg" alt="remove button">
@@ -34,7 +35,8 @@
             class="new-list" 
             v-model="newListName"
             placeholder="+add list"
-            @keyup.enter="createList">
+            @keyup.enter="createList"
+            maxlength="10">
         </header>
       </li>
     </ul>
@@ -100,14 +102,14 @@ export default {
   height: 500px;
   width: 400px;
   margin: 15px;
-  /* background: #00e5a1; */
-  background: #ffffff;
+  background: #f8f8f8;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .single-list-header {
-  padding: 3%;
+  padding: 5% 0;
   position: relative;
+  font-weight: 300;
 }
 
 .single-list-header > label {
@@ -115,16 +117,15 @@ export default {
 }
 
 .single-list-header > input {
-  height: 40px;
+  width: 60%;
+  height: 50px;
   font-size: 30px;
-  text-align: center;
   color: #5c616f;
-  border: none;
 }
 
 .remove-btn {
   position: absolute;
-  top: 30px;
+  top: 40px;
   right: 30px;
 }
 
