@@ -1,10 +1,9 @@
 <template>
-  <main class="todos-section" v-show="lists.length">
-    <ul>
-      <li v-for="list in lists" :key="list._id">
+    <ul class="todos-lists" v-show="lists.length">
+      <li class="todos-single-list" v-for="list in lists" :key="list._id">
         <single-list v-bind="list"></single-list>
       </li>
-      <li>
+      <li class="todos-single-list">
         <input 
           type="text"
           class="new-list" 
@@ -13,7 +12,6 @@
           @keyup.enter="createList">
       </li>
     </ul>
-  </main>
 </template>
 <script>
 import api from "../api/api.js";
@@ -46,7 +44,7 @@ export default {
     createList() {
       api.createList(this.newListName).then(res => {
         this.lists.push(res.data.data);
-        this.newListName = '';
+        this.newListName = "";
         this.msg = res.msg;
       });
     },
@@ -67,21 +65,16 @@ export default {
 </script>
 <style scoped>
 
-.todos-section {
-  margin: 50px auto;
-  padding: 1%;
-  width: 50%;
-  height: 80%;
-  background: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-}
-
-ul {
+.todos-lists {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.todos-single-list {
+  height: 500px;
+  width: 400px;
+  margin: 15px;
 }
 </style>

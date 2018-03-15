@@ -1,6 +1,8 @@
 <template>
   <div class="single-list">
-      <h2>{{name}}</h2>
+      <header class="single-list-header">
+        <h2>{{name}}</h2>
+      </header>
       <div class="tasks-container" v-show="tasks.length">
         <ul>
             <li v-for="(task, index) in tasks" :key="task._id">
@@ -79,7 +81,20 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+.single-list {
+  background: #00e5a1;
+  height: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.single-list-header {
+  padding: 3%;
+}
+.single-list-header > h2 {
+  font-size: 50px;
+}
+
 .single-task {
   height: 30px;
 }

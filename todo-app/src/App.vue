@@ -5,9 +5,9 @@
       <h1>{{header}}</h1>
     </header>
     <!-- Main Content -->
-    <TodoLists/>
-    <!-- Footer -->
-    <footer class="todos-footer"></footer>
+    <main class="todos-section">
+      <TodoLists/>
+    </main>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   name: "App",
   data() {
     return {
-      header: "to-do app"
+      header: "simple to-do app"
     };
   },
   components: {
@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style>
+*{
+  box-sizing: border-box;
+}
 html {
   height: 100%;
 }
@@ -35,6 +38,7 @@ html {
 body {
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 h1,
@@ -46,14 +50,29 @@ h2 {
 #todos-app {
   font-family: "Lato", sans-serif;
   text-align: center;
-  height: 100%;
   background: #f0eee8;
   color: #5c616f;
-  padding: 5%;
+  padding: 1px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 100%;
 }
 
+.todos-header {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  padding: 2%;
+}
 .todos-header > h1 {
   text-align: center;
   font-size: 60px;
+  font-style: italic;
+}
+
+.todos-section {
+  margin: 10% auto;
+  padding: 0 2%;
+  display: flex;
 }
 </style>
