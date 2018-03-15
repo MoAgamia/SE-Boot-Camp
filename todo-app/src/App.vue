@@ -1,38 +1,59 @@
 <template>
-  <div id="app">
-    <Todo/>
+  <div id="todos-app">
+    <!-- Header -->
+    <header class="todos-header">
+      <h1>{{header}}</h1>
+    </header>
+    <!-- Main Content -->
+    <TodoLists/>
+    <!-- Footer -->
+    <footer class="todos-footer"></footer>
   </div>
 </template>
 
 <script>
-import Todo from './components/Todo'
+import TodoLists from "./components/TodoLists";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      header: "to-do app"
+    };
+  },
   components: {
-    Todo
+    TodoLists
   }
-}
+};
 </script>
 
 <style>
-html{
+html {
   height: 100%;
 }
 
-body{
+body {
   margin: 0;
   height: 100%;
 }
 
-#app {
-  font-family: 'Lato', sans-serif;
+h1,
+h2 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#todos-app {
+  font-family: "Lato", sans-serif;
   text-align: center;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:#F0EEE8;
-  color: #5C616F;
+  background: #f0eee8;
+  color: #5c616f;
+  padding: 5%;
+}
+
+.todos-header > h1 {
+  text-align: center;
+  font-size: 60px;
 }
 </style>
