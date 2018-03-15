@@ -43,9 +43,10 @@ export default {
     cancelEditList(id) {
       this.$set(this.lists, id, { edit: false });
     },
-    createList(name) {
-      api.createList(name).then(res => {
-        this.lists.push(res.data);
+    createList() {
+      api.createList(this.newListName).then(res => {
+        this.lists.push(res.data.data);
+        this.newListName = '';
         this.msg = res.msg;
       });
     },
@@ -65,6 +66,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .todos-section {
   margin: 50px auto;
   padding: 1%;
