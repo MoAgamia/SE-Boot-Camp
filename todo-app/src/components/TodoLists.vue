@@ -1,21 +1,29 @@
 <template>
-    <ul class="todos-lists" v-show="lists.length">
-      <li class="todos-single-list" v-for="list in lists" :key="list._id">
-        <single-list v-bind="list"></single-list>
+    <ul class="todos-lists">
+      <li class="single-list" v-for="(list, index) in lists" :key="list._id">
+        <header class="single-list-header">
+          <label @dblclick="editTask(index)">{{ list.name }}</label>
+          <button type="button" class="remove-btn" @click="deleteList(index, list._id)">
+            <img src="../../static/images/remove.svg" alt="remove button">
+          </button>
+        </header>
+        <tasks v-bind="list"></tasks>
       </li>
-      <li class="todos-single-list">
-        <input 
-          type="text"
-          class="new-list" 
-          v-model="newListName"
-          placeholder="Add New List"
-          @keyup.enter="createList">
+      <li class="single-list">
+        <header class="single-list-header">
+          <input 
+            type="text"
+            class="new-list" 
+            v-model="newListName"
+            placeholder="+add list"
+            @keyup.enter="createList">
+        </header>
       </li>
     </ul>
 </template>
 <script>
 import api from "../api/api.js";
-import SingleList from "./SingleList";
+import Tasks from "./Tasks";
 
 export default {
   name: "lists",
@@ -26,7 +34,7 @@ export default {
     });
   },
   components: {
-    SingleList
+    Tasks
   },
   data() {
     return {
@@ -56,7 +64,7 @@ export default {
     },
     deleteList(listIndex, listId) {
       api.deleteList(listId).then(res => {
-        this.$set(this.lists, listIndex, null);
+        this.$delete(this.lists, listIndex);
         this.msg = res.msg;
       });
     }
@@ -64,7 +72,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .todos-lists {
   list-style-type: none;
   padding: 0;
@@ -72,9 +79,40 @@ export default {
   justify-content: space-around;
 }
 
-.todos-single-list {
+.single-list {
   height: 500px;
   width: 400px;
   margin: 15px;
+  /* background: #00e5a1; */
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.single-list-header {
+  padding: 3%;
+  position: relative;
+}
+
+.single-list-header > label {
+  font-size: 50px;
+}
+
+.single-list-header > input{
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  color: #5c616f;
+  border: none;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.remove-btn > img {
+  width: 20px;
+  height: 20px;
 }
 </style>

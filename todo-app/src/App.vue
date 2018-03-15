@@ -47,6 +47,11 @@ h2 {
   font-weight: normal;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 #todos-app {
   font-family: "Lato", sans-serif;
   text-align: center;
