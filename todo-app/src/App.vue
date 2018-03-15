@@ -52,6 +52,11 @@ button {
   border: none;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 #todos-app {
   font-family: "Lato", sans-serif;
   text-align: center;

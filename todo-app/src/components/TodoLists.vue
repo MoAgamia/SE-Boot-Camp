@@ -1,14 +1,32 @@
 <template>
     <ul class="todos-lists">
-      <li class="single-list" v-for="(list, index) in lists" :key="list._id">
-        <header class="single-list-header">
-          <label @dblclick="editTask(index)">{{ list.name }}</label>
-          <button type="button" class="remove-btn" @click="deleteList(index, list._id)">
-            <img src="../../static/images/remove.svg" alt="remove button">
-          </button>
-        </header>
-        <tasks v-bind="list"></tasks>
+      <li class="single-list" 
+          v-for="(list, index) in lists" 
+          :key="list._id">
+          <!-- List header -->
+          <header class="single-list-header">
+            <!-- List name -->
+            <label v-if="list !== editedList" 
+                  class = "single-list-name"
+                  @dblclick="editList(list)">{{ list.name }}
+            </label>
+            <!-- Edit list name -->
+            <input v-else
+                class = "single-list-name"
+                type="text"
+                v-model="list.name"
+                @blur="doneEdit(index, list)"
+                @keyup.enter="doneEdit(index, list)"
+                @keyup.esc="cancelEditList">
+            <!-- Remove list button -->
+            <button type="button" class="remove-btn" @click="deleteList(index, list._id)">
+              <img src="../../static/images/remove.svg" alt="remove button">
+            </button>
+          </header>
+          <!-- Tasks in list -->
+          <tasks v-bind="list"></tasks>
       </li>
+      <!-- Add new list-->
       <li class="single-list">
         <header class="single-list-header">
           <input 
@@ -39,15 +57,16 @@ export default {
   data() {
     return {
       newListName: "",
+      editedList: null,
       lists: []
     };
   },
   methods: {
-    editList(id) {
-      this.$set(this.lists, id, { edit: true });
+    editList(list) {
+      this.editedList = list;
     },
-    cancelEditList(id) {
-      this.$set(this.lists, id, { edit: false });
+    cancelEditList() {
+      this.editedList = null;
     },
     createList() {
       api.createList(this.newListName).then(res => {
@@ -56,9 +75,9 @@ export default {
         this.msg = res.msg;
       });
     },
-    updateList(listIndex, listId, name) {
-      api.updateList(listId, name).then(res => {
-        this.$set(this.lists, listIndex, res.data);
+    doneEdit(listIndex, list) {
+      api.updateListName(list._id, list.name).then(res => {
+        this.$set(this.lists, listIndex, res.data.data);
         this.msg = res.msg;
       });
     },
@@ -73,8 +92,6 @@ export default {
 </script>
 <style scoped>
 .todos-lists {
-  list-style-type: none;
-  padding: 0;
   display: flex;
   justify-content: space-around;
 }
@@ -97,7 +114,7 @@ export default {
   font-size: 50px;
 }
 
-.single-list-header > input{
+.single-list-header > input {
   height: 40px;
   font-size: 30px;
   text-align: center;

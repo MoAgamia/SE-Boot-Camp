@@ -13,9 +13,8 @@ const axiosInstance = axios.create({
 export default {
     register: (username, password, confirmPassword) => {
         return axiosInstance.post('auth/register', { username, password, confirmPassword })
-    }
-
-    , login: (username, password) => {
+    },
+    login: (username, password) => {
         axiosInstance.post('auth/login', { username, password })
             .then((res) => {
                 axiosInstance.defaults.headers.common['Authorization'] = res.data;
@@ -23,36 +22,29 @@ export default {
                 return res
             })
             .catch((err) => err)
-    }
-
-    , getLists: () => {
+    },
+    getLists: () => {
         return axiosInstance.get('list/getLists')
-    }
-
-    , createList: (name) => {
+    },
+    createList: (name) => {
         return axiosInstance.post('list/createList', { name })
-    }
-
-    , updateListName: (listId, name) => {
+    },
+    updateListName: (listId, name) => {
         return axiosInstance.patch(`list/updateListName/${listId}`, { name })
-    }
-
-    , deleteList: (listId) => {
+    },
+    deleteList: (listId) => {
         return axiosInstance.delete(`list/deleteList/${listId}`)
-    }
-
-    , getTasks: (listId) => {
+    },
+    getTasks: (listId) => {
         return axiosInstance.get('list/getLists')
-    }
-
-    , createTask: (listId) => (description) => {
+    },
+    createTask: (listId) => (description) => {
         return axiosInstance.patch(`list/${listId}/createTask`, { description })
     }
     , updateTask: (listId) => (taskId, description) => {
         return axiosInstance.patch(`list/${listId}/updateTask/${taskId}`, { description })
-    }
-
-    , deleteTask: (listId) => (taskId, description) => {
+    },
+    deleteTask: (listId) => (taskId, description) => {
         return axiosInstance.patch(`list/${listId}/deleteTask/${taskId}`, { description })
     }
 }
