@@ -38,13 +38,13 @@ export default {
     getTasks: (listId) => {
         return axiosInstance.get('list/getLists')
     },
-    createTask: (listId) => (description) => {
+    createTask: (listId, description) => {
         return axiosInstance.patch(`list/${listId}/createTask`, { description })
-    }
-    , updateTask: (listId) => (taskId, description) => {
-        return axiosInstance.patch(`list/${listId}/updateTask/${taskId}`, { description })
     },
-    deleteTask: (listId) => (taskId, description) => {
-        return axiosInstance.patch(`list/${listId}/deleteTask/${taskId}`, { description })
-    }
+    updateTask: (listId, taskId, task) => {
+        return axiosInstance.patch(`list/${listId}/updateTask/${taskId}`, task)
+    },
+    deleteTask: (listId, taskId) => {
+        return axiosInstance.patch(`list/${listId}/deleteTask/${taskId}`)
+    },
 }

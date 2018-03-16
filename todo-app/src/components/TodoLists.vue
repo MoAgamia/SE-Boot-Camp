@@ -25,7 +25,9 @@
             </button>
           </header>
           <!-- Tasks in list -->
-          <tasks v-bind="list"></tasks>
+          <div class="tasks-container">
+            <tasks v-bind="list"></tasks>
+          </div>
       </li>
       <!-- Add new list-->
       <li class="single-list">
@@ -99,7 +101,7 @@ export default {
 }
 
 .single-list {
-  height: 500px;
+  /* height: 500px; */
   width: 400px;
   margin: 15px;
   background: #f8f8f8;
@@ -107,16 +109,20 @@ export default {
 }
 
 .single-list-header {
-  padding: 5% 0;
+  height: 90px;
+  display: flex;
+  align-items: center;
   position: relative;
   font-weight: 300;
 }
 
 .single-list-header > label {
+  margin-left: 10%;
   font-size: 50px;
 }
 
 .single-list-header > input {
+  margin-left: 10%;
   width: 60%;
   height: 50px;
   font-size: 30px;
@@ -125,12 +131,18 @@ export default {
 
 .remove-btn {
   position: absolute;
-  top: 40px;
+  top: 0;
+  bottom: 0;
   right: 30px;
 }
 
 .remove-btn > img {
   width: 20px;
   height: 20px;
+}
+
+.tasks-container {
+  /* height: 70%; */
+  /* overflow-y: auto; */
 }
 </style>

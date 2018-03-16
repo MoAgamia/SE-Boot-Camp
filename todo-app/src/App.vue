@@ -60,21 +60,18 @@ ul {
 input{
     background: none;
     border: none;
-    text-align: center;
 }
 #todos-app {
   font-family: "Lato", sans-serif;
-  text-align: center;
   background: #f0eee8;
   color: #5c616f;
   padding: 1px;
-  overflow-y: hidden;
   overflow-x: auto;
   height: 100%;
 }
 
 .todos-header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   height: 10%;
   padding: 2%;
@@ -87,7 +84,7 @@ input{
 }
 
 .todos-section {
-  margin: 10% auto;
+  margin: 2% auto;
   padding: 0 2%;
   display: flex;
 }
