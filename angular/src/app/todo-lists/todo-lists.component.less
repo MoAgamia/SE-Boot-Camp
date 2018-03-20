@@ -1,0 +1,47 @@
+@import "../tasks/tasks.component.less";
+.todos-lists {
+    display: flex;
+    justify-content: space-around;
+  }
+  .single-list {
+    /* height: 500px; */
+    width: 400px;
+    margin: 15px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+  .single-list-header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: 300;
+  }
+  .single-list-header > label {
+    margin-left: 10%;
+    font-size: 50px;
+  }
+  .single-list-header > input {
+    margin-left: 10%;
+    width: 60%;
+    height: 50px;
+    font-size: 30px;
+    color: #5c616f;
+  }
+  .remove-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+  }
+  .remove-btn > img {
+    width: 20px;
+    height: 20px;
+  }
+  .tasks-container {
+    /* height: 70%; */
+    /* overflow-y: auto; */
+  }
+  .new-task{
+    margin-left: 10%;
+  }

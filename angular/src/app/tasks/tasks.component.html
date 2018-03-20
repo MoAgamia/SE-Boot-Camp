@@ -1,0 +1,24 @@
+<ul class="tasks-list">
+  <li class="single-task">
+    <!-- Task completion button -->
+    <button *ngIf="!task.completed" type="button" class="task-status-btn" (click)="task.setCompletion(true)">
+      <img src="assets/not-done.svg" alt="complete button">
+    </button>
+    <!-- Task undo button -->
+    <button *ngIf="task.completed" type="button" class="task-status-btn" (click)="task.setCompletion(false)">
+      <img src="assets/done.svg" alt="complete button">
+    </button>
+    <!-- Task description -->
+    <label *ngIf="!task.editable" class="single-task-description" [ngClass]="{'completed-task': task.completed}" (click)="task.edit()">{{ task.description }}
+    </label>
+    <!-- Edit task description -->
+    <input *ngIf="task.editable" class="single-task-description" type="text" [(ngModel)]="task.description" (blur)="task.finishEditing()"
+      (keyup.enter)="task.finishEditing()" maxlength="10">
+    <!-- Remove task button -->
+    <button type="button" class="remove-btn" (click)="task.parent.removeTask(task)">
+      <img src="assets/remove.svg" alt="remove button">
+    </button>
+    <!-- Divider line -->
+    <div class="divider"></div>
+  </li>
+</ul>

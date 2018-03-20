@@ -1,0 +1,31 @@
+<ul class="todos-lists">
+  <li class="single-list" *ngFor="let todo of todoList.items">
+    <!-- List header -->
+    <header class="single-list-header">
+      <!-- List name -->
+      <label *ngIf="!todo.editable" class="single-list-name" (click)="todo.edit()">{{ todo.title }}
+      </label>
+      <!-- Edit list name -->
+      <input *ngIf="todo.editable" (blur)="todo.finishEditing()" class="single-list-name" type="text" [(ngModel)]="todo.title"
+        maxlength="10">
+      <!-- Remove list button -->
+      <button type="button" class="remove-btn" (click)="todoList.removeTodo(todo)">
+        <img src="assets/remove.svg" alt="remove button">
+      </button>
+    </header>
+    <!-- Tasks in list -->
+    <div class="tasks-container">
+      <Tasks [task]="task" *ngFor="let task of todo.tasks"></Tasks>
+      <!-- Add new task-->
+      <div class="single-task new-task">
+        <input type="text" [(ngModel)]="todo.newTaskDescription" placeholder="+add task" (keyup.enter)="todo.createTask();" maxlength="10">
+      </div>
+    </div>
+  </li>
+  <!-- Add new list-->
+  <li class="single-list">
+    <header class="single-list-header">
+      <input type="text" class="new-list" [(ngModel)]="newListName" placeholder="+add list" (keyup.enter)="createTodo()" maxlength="10">
+    </header>
+  </li>
+</ul>

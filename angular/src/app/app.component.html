@@ -1,29 +1,10 @@
-<div class="col">
-  <form (ngSubmit)="submit()" class="new-container">
-    <input type="text" [(ngModel)]="input" name="input">
-    <button type="submit">+</button>
-  </form>
-  <div class="filters">
-    <ul>
-      <li>
-        <span (click)="changeFilter('all')">All</span>
-      </li>
-      <li>
-        <span (click)="changeFilter('done')">Done</span>
-      </li>
-      <li>
-        <span (click)="changeFilter('not done')">Not Done</span>
-      </li>
-      <li>
-        <button (click)="sort()">Sort</button>
-      </li>
-    </ul>
-  </div>
-  <div class="todo" *ngFor="let todo of todos;let i = index;">
-    {{todo.name}}
-    <button (click)="delete(todo)">delete</button>
-    <button (click)="move(-1, i)">up</button>
-    <button (click)="move(1, i)">down</button>
-    <input type="checkbox" [(ngModel)]="todo.completed" />
-  </div>
+<div id="todos-app">
+  <!-- Header -->
+  <header class="todos-header">
+    <h1>{{header}}</h1>
+  </header>
+  <!-- Main Content -->
+  <main class="todos-section">
+    <TodoLists></TodoLists>
+  </main>
 </div>
