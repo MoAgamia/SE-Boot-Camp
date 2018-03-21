@@ -7,7 +7,6 @@ import { Todo, TodoList } from "./app.models";
 })
 export class AppComponent implements OnInit {
 
-  header: String = "todolist"
   constructor() {
   }
   ngOnInit() {
