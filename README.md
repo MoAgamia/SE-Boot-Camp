@@ -1,5 +1,14 @@
 ## SE Boot Camp
 
+## Getting Started
+
+## Audience
+Our target audience for the SE bootcamp are:
+
+## Bootcamp Objectives
+Individuals that attend the SE bootcamp have demonstrated:
+
+## Curriculum
 
 ## Authors
 
@@ -11,3 +20,8 @@
 * **Mahmoud Yassin** - *Programmer* - [mayassin](https://github.com/mayassin)
 * **Aya Khaled** - *Programmer* - [AyaKhaled1](https://github.com/AyaKhaled1)
 * **Fatma Elazab** - *Programmer* - [fatmaelazab](https://github.com/fatmaelazab)
+
+
+## Acknowledgments
+
+
