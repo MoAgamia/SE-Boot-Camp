@@ -1,6 +1,6 @@
 ## SE Boot Camp
 This is a work zone
-* Keep Calm!
+* Stay Calm!
 * Stay Focused!
 * Stay Positive!
 
@@ -8,14 +8,14 @@ This is a work zone
 ![Bootcamp RoadMap](https://raw.githubusercontent.com/MoAgamia/SE-Boot-Camp/master/Bootcamp-Slides/Bootcamp-Assests/SE-Bootcamp-RoadMap.PNG "Bootcamp RoadMap")
 
 ## Audience
-Our target audience for the SE bootcamp are the those who are starting their journy to become software engineers. 
+Our target audience for the SE boot camp are the those who are starting their journey to become software engineers. 
 
 ## Bootcamp Objectives
-Individuals that attend the SE bootcamp have demonstrated:
+Individuals that attend the SE boot camp have demonstrated:
 * An understanding of SE concepts. 
 * An understanding of Web Developer RoadMap.
 * An understanding of creating a Todo app using MEAN/MEVN stack.
-* An understanding of Delployment.
+* An understanding of Deployment.
 
 ## Curriculum
 * SE
