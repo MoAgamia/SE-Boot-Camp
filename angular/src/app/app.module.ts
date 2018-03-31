@@ -12,20 +12,32 @@ import { TodosComponent } from './todos/todos.component';
 import { HttpClientModule } from "@angular/common/http";
 import { AuthService } from "./auth.service";
 import { ListsService } from "./lists.service";
+
+
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'login', component: LoginComponent },
       { path: 'todos', component: TodosComponent }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'login'
   }
 ]
 
 
 @NgModule({
+  // declarations are the components which this module contains. You can think of a module declaring a component as 
+  // if it is claiming it is the owner of this component. A component can be owned by one and only one module.
   declarations: [
     AppComponent,
     TodoListsComponent,
@@ -33,18 +45,22 @@ const routes: Routes = [
     LoginComponent,
     TodosComponent,
   ],
+  // imports are other modules like this one that this module depends on. For example, this module imports the HttpClientModule
+  // in order to be able to use http requests from the client
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
+  // providers are the services the module uses.
   providers: [
     httpInterceptorProviders,
     AuthService,
     ListsService,
     AuthGuard
   ],
+  // the main component that the app renders
   bootstrap: [AppComponent]
 })
 export class AppModule { }

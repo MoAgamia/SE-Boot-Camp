@@ -8,6 +8,7 @@ export class AuthGuard implements CanActivate {
 
   }
   canActivate() {
+    // will only allow navigation if user is authorized
     return this.auth.authorized
   }
 }
