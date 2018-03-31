@@ -24,7 +24,7 @@ export class TasksComponent implements OnInit {
     task.editable = false;
 
     // update task in the backend
-    this.ls.updateTaskInList(task.parent._id, task._id, task.description).subscribe((res: ResponseBody) => {
+    this.ls.updateTaskInList(task.parent._id, task._id, task.description, task.done).subscribe((res: ResponseBody) => {
       // print result
       console.log(res);
     });
@@ -46,6 +46,11 @@ export class TasksComponent implements OnInit {
 
   toggleTaskCompletion(task: Task) {
     // switch task between done and not done
-    task.done = !task.done;
+    this.ls.updateTaskInList(task.parent._id, task._id, task.description, !task.done).subscribe((res: ResponseBody) => {
+      // set frontend
+      task.done = !task.done;
+
+    });
+
   }
 }

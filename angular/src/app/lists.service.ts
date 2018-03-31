@@ -1,3 +1,4 @@
+import { Task } from './app.models';
 import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -28,9 +29,10 @@ export class ListsService {
     return this.http.patch(environment.url + "list/" + id + "/createTask", { description })
   }
 
-  updateTaskInList(listId: string, taskID: string, description: string) {
-    return this.http.patch(environment.url + "list/" + listId + "/updateTask/" + taskID, { description })
+  updateTaskInList(listId: string, taskID: string, description: string, done: boolean) {
+    return this.http.patch(environment.url + "list/" + listId + "/updateTask/" + taskID, { description, done })
   }
+
 
   deleteTaskInList(listId: string, taskID: string) {
     return this.http.patch(environment.url + "list/" + listId + "/deleteTask/" + taskID, {})
