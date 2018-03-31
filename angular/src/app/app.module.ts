@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth-guard.service';
+import { httpInterceptorProviders } from './http-interceptors/index';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -7,11 +9,21 @@ import { TodoListsComponent } from './todo-lists/todo-lists.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { LoginComponent } from './login/login.component';
 import { TodosComponent } from './todos/todos.component';
-
+import { HttpClientModule } from "@angular/common/http";
+import { AuthService } from "./auth.service";
+import { ListsService } from "./lists.service";
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'todos', component: TodosComponent }
+  {
+    path: '',
+    component: AppComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'todos', component: TodosComponent }
+    ]
+  }
 ]
+
 
 @NgModule({
   declarations: [
@@ -24,9 +36,15 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders,
+    AuthService,
+    ListsService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
