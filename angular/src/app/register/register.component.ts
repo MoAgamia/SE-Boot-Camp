@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     this.auth.register(new RegisterBody(this.$email, this.$password, this.$password)).subscribe(
       (res: ResponseBody) => {
         alert(res.msg);
-        this.auth.setToken(res.data);
+        // this.auth.setToken(res.data);
         this.router.navigateByUrl("/login")
       },
       (err: HttpErrorResponse) => {
