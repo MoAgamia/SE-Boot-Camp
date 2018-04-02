@@ -12,6 +12,7 @@ import { TodosComponent } from './todos/todos.component';
 import { HttpClientModule } from "@angular/common/http";
 import { AuthService } from "./auth.service";
 import { ListsService } from "./lists.service";
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: '**',
@@ -44,6 +49,7 @@ const routes: Routes = [
     TasksComponent,
     LoginComponent,
     TodosComponent,
+    RegisterComponent,
   ],
   // imports are other modules like this one that this module depends on. For example, this module imports the HttpClientModule
   // in order to be able to use http requests from the client
@@ -51,7 +57,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   // providers are the services the module uses.
   providers: [

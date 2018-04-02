@@ -77,9 +77,10 @@ export class TodoListsComponent implements OnInit {
     this.ls.createList(this.newListName).subscribe(() => {
       // when the backend responds, add it in the frontend
       this.todoList.addTodo(new Todo(this.newListName));
+      this.newListName = "";
+
     }, console.error)
     // reset the input text
-    this.newListName = "";
   }
 
   // deletes a todo/list
@@ -95,7 +96,7 @@ export class TodoListsComponent implements OnInit {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     // remove subscription
-    this.$todoListSub.unsubscribe();
+    // this.$todoListSub.unsubscribe();
   }
 
 }
