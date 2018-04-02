@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private as: AuthService, private router: Router) { }
   header: String = "todolist"
 
   ngOnInit() {
+    if (!this.as.authorized) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }
