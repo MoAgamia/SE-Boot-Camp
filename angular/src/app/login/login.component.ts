@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
   $email: string;
   $password: string;
   ngOnInit() {
+    if (this.auth.authorized) {
+      this.router.navigateByUrl("/todos")
+    }
   }
 
   onSubmit() {

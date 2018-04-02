@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       (res: ResponseBody) => {
         alert(res.msg);
         this.auth.setToken(res.data);
-        this.router.navigateByUrl("/todos")
+        this.router.navigateByUrl("/login")
       },
       (err: HttpErrorResponse) => {
         let error = err.error as ResponseBody

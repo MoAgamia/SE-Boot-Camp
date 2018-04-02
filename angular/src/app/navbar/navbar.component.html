@@ -1,0 +1,16 @@
+<ul class="navbar">
+  <ng-container *ngIf="!authorized()">
+    <li>
+      <a href="" routerLink="/register">Register</a>
+    </li>
+    <li>
+      <a href="" routerLink="/login">Login</a>
+    </li>
+  </ng-container>
+
+  <ng-container *ngIf="authorized()">
+    <li>
+      <a href="" (click)="logout()">Logout</a>
+    </li>
+  </ng-container>
+</ul>

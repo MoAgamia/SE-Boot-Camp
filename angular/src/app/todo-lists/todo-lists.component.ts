@@ -74,12 +74,20 @@ export class TodoListsComponent implements OnInit {
   // create a new todo/list
   createTodo() {
     // call the backend
-    this.ls.createList(this.newListName).subscribe(() => {
+    this.ls.createList(this.newListName).subscribe((res) => {
       // when the backend responds, add it in the frontend
-      this.todoList.addTodo(new Todo(this.newListName));
+      let response = res as ResponseBody;
+      let todo = new Todo(this.newListName)
+      todo._id = res["data"]._id;
+      this.todoList.addTodo(todo);
       this.newListName = "";
 
-    }, console.error)
+    }, (error) => {
+      console.log(error);
+      let response = error.error as ResponseBody;
+
+      window.alert(response.msg);
+    })
     // reset the input text
   }
 

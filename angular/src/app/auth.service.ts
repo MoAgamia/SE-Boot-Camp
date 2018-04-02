@@ -40,4 +40,10 @@ export class AuthService {
     console.log(body)
     return this.http.post(environment.url + "auth/register", { email, password, confirmPassword })
   }
+  logout() {
+    this.authorized = false;
+    this.token = null;
+    delete window.localStorage.token;
+
+  }
 }

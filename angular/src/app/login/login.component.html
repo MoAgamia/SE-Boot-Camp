@@ -1,6 +1,10 @@
 <div class="login">
-
   <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="center">
+      <h1>Login</h1>
+    </div>
+
+
     <div class="single-list">
       <div class="single-list-header">
         <input class="new-list" type="email" autocomplete="email" [(ngModel)]="$email" name="email" required #email="ngModel" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">

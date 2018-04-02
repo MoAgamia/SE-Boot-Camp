@@ -13,17 +13,16 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuthService } from "./auth.service";
 import { ListsService } from "./lists.service";
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Routes = [
+
   {
-    path: '',
-    component: AppComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: 'todos', component: TodosComponent }
-    ]
-  },
+    path: 'todos',
+    component: TodosComponent
+  }
+  ,
   {
     path: 'login',
     component: LoginComponent
@@ -50,6 +49,7 @@ const routes: Routes = [
     LoginComponent,
     TodosComponent,
     RegisterComponent,
+    NavbarComponent,
   ],
   // imports are other modules like this one that this module depends on. For example, this module imports the HttpClientModule
   // in order to be able to use http requests from the client
