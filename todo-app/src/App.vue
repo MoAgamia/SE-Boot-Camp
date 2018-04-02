@@ -5,9 +5,7 @@
       <h1>{{header}}</h1>
     </header>
     <!-- Main Content -->
-    <main class="todos-section">
-      <TodoLists/>
-    </main>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -47,20 +45,11 @@ h2 {
   font-weight: normal;
 }
 
-button {
-  background: none;
-  border: none;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
 }
 
-input{
-    background: none;
-    border: none;
-}
 #todos-app {
   font-family: "Lato", sans-serif;
   background: #f0eee8;
@@ -73,7 +62,6 @@ input{
 .todos-header {
   /* position: fixed; */
   width: 100%;
-  height: 10%;
   padding: 2%;
 }
 .todos-header > h1 {
@@ -83,9 +71,4 @@ input{
   font-weight: 300;
 }
 
-.todos-section {
-  margin: 2% auto;
-  padding: 0 2%;
-  display: flex;
-}
 </style>

@@ -4,24 +4,23 @@ const BASE_URL = 'https://nodejs-to-do.herokuapp.com/api/'
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
+    withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('jwt-token') || ''
     }
 })
 
+axiosInstance.interceptors.request.use(config => {
+    config.headers['authorization'] = localStorage.getItem('jwt-token') || ''
+    return config
+})
+
 export default {
-    register: (username, password, confirmPassword) => {
-        return axiosInstance.post('auth/register', { username, password, confirmPassword })
+    register: (user) => {
+        return axiosInstance.post('auth/register', user)
     },
-    login: (username, password) => {
-        axiosInstance.post('auth/login', { username, password })
-            .then((res) => {
-                axiosInstance.defaults.headers.common['Authorization'] = res.data;
-                localStorage.setItem('jwt-token')
-                return res
-            })
-            .catch((err) => err)
+    login: (user) => {
+        return axiosInstance.post('auth/login', user)
     },
     getLists: () => {
         return axiosInstance.get('list/getLists')
@@ -47,4 +46,7 @@ export default {
     deleteTask: (listId, taskId) => {
         return axiosInstance.patch(`list/${listId}/deleteTask/${taskId}`)
     },
+    saveLoginToken: (newToken) => {
+        localStorage.setItem('jwt-token', newToken)
+    }
 }

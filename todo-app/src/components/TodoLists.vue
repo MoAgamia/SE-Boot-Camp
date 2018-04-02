@@ -1,4 +1,5 @@
 <template>
+  <section class="todos-section">
     <ul class="todos-lists">
       <li class="single-list" 
           v-for="(list, index) in lists" 
@@ -32,8 +33,7 @@
       <!-- Add new list-->
       <li class="single-list">
         <header class="single-list-header">
-          <input 
-            type="text"
+          <input type="text"
             class="new-list" 
             v-model="newListName"
             placeholder="+add list"
@@ -42,6 +42,7 @@
         </header>
       </li>
     </ul>
+  </section>
 </template>
 <script>
 import api from "../api/api.js";
@@ -100,6 +101,16 @@ export default {
   justify-content: space-around;
 }
 
+input{
+    background: none;
+    border: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
 .single-list {
   /* height: 500px; */
   width: 400px;
@@ -141,8 +152,9 @@ export default {
   height: 20px;
 }
 
-.tasks-container {
-  /* height: 70%; */
-  /* overflow-y: auto; */
+.todos-section {
+  margin: 2% auto;
+  padding: 0 2%;
+  display: flex;
 }
 </style>
