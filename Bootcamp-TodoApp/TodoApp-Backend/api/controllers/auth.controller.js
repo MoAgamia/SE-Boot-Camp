@@ -35,8 +35,7 @@ module.exports.register = function(req, res, next) {
   }
   // Check that password matches confirmPassword
   if (password !== req.body.confirmPassword.trim()) {
-    return res.status(422)
-    .json({
+    return res.status(422).json({
       err: null,
       msg: 'password and confirmPassword does not match.',
       data: null
@@ -52,11 +51,10 @@ module.exports.register = function(req, res, next) {
     }
     // If there is a user with this email don't continue
     if (user) {
-    return res
-    .status(422)
-    .json({
+      return res.status(422).json({
         err: null,
-        msg:'A user with this email address already exists, please try another email address.',
+        msg:
+          'A user with this email address already exists, please try another email address.',
         data: null
       });
     }
@@ -76,7 +74,7 @@ module.exports.register = function(req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).json({
+        res.status(201).json({
           err: null,
           msg: 'Registration successful, you can now login to your account.',
           data: newUser.toObject()
@@ -96,8 +94,7 @@ module.exports.login = function(req, res, next) {
     Validations.isString(req.body.password);
 
   if (!valid) {
-    return res.status(422)
-    .json({
+    return res.status(422).json({
       err: null,
       msg:
         'email(String and of valid email format) and password(String) are required fields.',
@@ -134,7 +131,6 @@ module.exports.login = function(req, res, next) {
           .json({ err: null, msg: 'Password is incorrect.', data: null });
       }
       // Create a JWT and put in it the user object from the database
-     
       var token = jwt.sign(
         {
           // user.toObject transorms the document to a json object without the password as we can't leak sensitive info to the frontend
@@ -146,9 +142,7 @@ module.exports.login = function(req, res, next) {
         }
       );
       // Send the JWT to the frontend
-      return res
-      .status(200)
-      .json({ err: null, msg: 'Succesfull', data: token });
+      res.status(200).json({ err: null, msg: 'Welcome', data: token });
     });
   });
 };
