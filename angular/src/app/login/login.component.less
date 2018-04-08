@@ -1,0 +1,36 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #f0eee8;
+    justify-content: center;
+    align-items: center;
+    &-btn{
+        text-align: center;
+        input[type="submit"]{
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            &:disabled{
+                background-color: gray !important;
+                color: black;
+            
+            }
+        }
+
+        
+    }
+    .alert{
+        font-family: "Lato", sans-serif;
+        color: red;
+    }
+}
+@import "../tasks/tasks.component.less";
+@import "../todo-lists/todo-lists.component.less";
