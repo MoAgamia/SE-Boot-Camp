@@ -1,7 +1,12 @@
 process.env.NODE_ENV = 'test'
 
+let base = undefined;
+if (!process.env.PWD) {
+     base = process.cwd();
+  }else{
+     base = process.env.PWD;
+  }
 const
-    base = process.env.PWD,
     mongoose = require('mongoose'),
     models = require(base + '/api/models/user.model'),
     User = mongoose.model('User'),
