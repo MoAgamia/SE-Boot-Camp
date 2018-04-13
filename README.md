@@ -5,7 +5,7 @@ This is a work zone
 * Stay Positive!
 
 ## Bootcamp RoadMap
-![Bootcamp RoadMap](https://raw.githubusercontent.com/MoAgamia/SE-Boot-Camp/master/Bootcamp-Slides/Bootcamp-Assests/SE-Bootcamp-RoadMap.PNG "Bootcamp RoadMap")
+![Bootcamp RoadMap](https://raw.githubusercontent.com/MoAgamia/SE-Boot-Camp/master/Bootcamp-Slides/BC-Slides/Bootcamp-Assests/SE-Bootcamp-RoadMap.PNG "Bootcamp RoadMap")
 
 ## Audience
 Our target audience for the SE boot camp are the those who are starting their journey to become software engineers. 
