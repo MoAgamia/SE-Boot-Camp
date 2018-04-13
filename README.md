@@ -17,30 +17,6 @@ Individuals that attend the SE boot camp have demonstrated:
 * An understanding of creating a Todo app using MEAN/MEVN stack.
 * An understanding of Deployment.
 
-## Bootcamp Github Structure
-The Bootcamp structure is:
-* Bootcamp slides
-  * BC-Slides
-      * [Bootcamp-Introduction:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-Introduction.pdf) The explanation of content that will be covered in this Bootcamp.
-      * [Bootcamp-SE:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-SE.pdf) The explanation of: 1- Software Engineering 2- SE Vs Developer 3- Best practices for software development.
-      * [Bootcamp-WebDeveloper:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-WebDeveloper.pdf) The explanation of Web Developer’s roadmap covering: 1- Road Map 2- Backend 3- Frontend.
-      * [Bootcamp-TodoAppBackend:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-TodoAppBackend.pdf) The explanation of backend covering: 1- Client-Server Architecture 2- RESTful Architecture 3- Node.js & Express 4- Database 5- Authentication 6- Postman.
-
-  * SE-Slides
-      * [SE-Lab01:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab01.pdf) The explanation of: 1- Software Engineering 2- Software Process Models 3- Agile Methodology 4- Scrum 5- Github.
-      * [SE-Lab02:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab02.pdf) The explanation of: 1- Scrum Process, Tools, Artifacts, and Methods 2- UML 3- SRS.
-      * [SE-Lab03:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab03.pdf) The explanation of Clean Code.
-      * [SE-Lab04:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab04.pdf) The explanation of: 1- Requirement Engineering 2- HTML, CSS & JS 3- Angular 4- Vue.js.
-      * [SE-Lab05:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab05.pdf) The explanation of: 1- MEAN Stack 2- CRUD.
-      * [SE-Lab06:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab06.pdf) The explanation of: 1- Testing Overview.
-      * [SE-Lab06-1:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab06-1.pdf) The explanation of Testing using Mocha, Chai & Should covering: 1- Mocha & Chai 2- Environment setup 3- File structure 4- Imports 5- Mocha structure.
-      * [SE-Lab07:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab07.pdf) The explanation of Deployment overview using Heroku.
-
-* Bootcamp TodoApp
-  * [TodoApp-Backend:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-Backend) The backend for a simple to-do list web app using Node.js, Express.js & MongoDB
-  * [TodoApp-BackendTesting:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-BackendTesting) The backend testing for a simple to-do list web app using Mocha & Chai
-  * [TodoApp-Frontend-Angular:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-Frontend-Angular) The frontend for a simple to-do list web app using Angular
-
 ## Bootcamp Curriculum
 * SE
   * What is SE?
@@ -73,6 +49,30 @@ The Bootcamp structure is:
         * Vue.JS
 * Deployment
     * Heroku  
+
+## Bootcamp Github Structure
+The Bootcamp structure is:
+* Bootcamp slides
+  * BC-Slides
+      * [Bootcamp-Introduction:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-Introduction.pdf) The explanation of content that will be covered in this Bootcamp.
+      * [Bootcamp-SE:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-SE.pdf) The explanation of: 1- Software Engineering 2- SE Vs Developer 3- Best practices for software development.
+      * [Bootcamp-WebDeveloper:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-WebDeveloper.pdf) The explanation of Web Developer’s roadmap covering: 1- Road Map 2- Backend 3- Frontend.
+      * [Bootcamp-TodoAppBackend:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/BC-Slides/BootCamp-TodoAppBackend.pdf) The explanation of backend covering: 1- Client-Server Architecture 2- RESTful Architecture 3- Node.js & Express 4- Database 5- Authentication 6- Postman.
+
+  * SE-Slides
+      * [SE-Lab01:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab01.pdf) The explanation of: 1- Software Engineering 2- Software Process Models 3- Agile Methodology 4- Scrum 5- Github.
+      * [SE-Lab02:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab02.pdf) The explanation of: 1- Scrum Process, Tools, Artifacts, and Methods 2- UML 3- SRS.
+      * [SE-Lab03:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab03.pdf) The explanation of Clean Code.
+      * [SE-Lab04:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab04.pdf) The explanation of: 1- Requirement Engineering 2- HTML, CSS & JS 3- Angular 4- Vue.js.
+      * [SE-Lab05:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab05.pdf) The explanation of: 1- MEAN Stack 2- CRUD.
+      * [SE-Lab06:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab06.pdf) The explanation of: 1- Testing Overview.
+      * [SE-Lab06-1:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab06-1.pdf) The explanation of Testing using Mocha, Chai & Should covering: 1- Mocha & Chai 2- Environment setup 3- File structure 4- Imports 5- Mocha structure.
+      * [SE-Lab07:](https://github.com/MoAgamia/SE-Boot-Camp/blob/master/Bootcamp-Slides/SE-Slides/SE-Lab07.pdf) The explanation of Deployment overview using Heroku.
+
+* Bootcamp TodoApp
+  * [TodoApp-Backend:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-Backend) The backend for a simple to-do list web app using Node.js, Express.js & MongoDB
+  * [TodoApp-BackendTesting:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-BackendTesting) The backend testing for a simple to-do list web app using Mocha & Chai
+  * [TodoApp-Frontend-Angular:](https://github.com/MoAgamia/SE-Boot-Camp/tree/master/Bootcamp-TodoApp/TodoApp-Frontend-Angular) The frontend for a simple to-do list web app using Angular
 
 ## Authors
 
