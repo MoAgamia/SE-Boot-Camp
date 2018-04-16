@@ -1,0 +1,64 @@
+.title {
+  text-align: center;
+}
+
+.btn-div{
+  width: 30%;
+  text-align: center;
+}
+
+#btn {
+  background-color: white; 
+  color: black;
+  border: 2px solid teal;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  display: inline-block;
+}
+
+#btn:hover {
+    background-color: teal;
+    color: white;
+}
+    
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.flex-grid .col {
+  width: 30%;
+  margin: 1%;
+  border-radius: 8px;
+  flex-direction: column;
+  background: mintcream;
+  line-height: 1.5;
+}
+
+#grid li {
+  background: turquoise;
+  margin: 10px 20px;
+  border-radius: 5px;
+  color: dimgrey;
+  list-style: none;
+}
+
+#grid li:before {
+  content: "todo";
+  display: inline-block;
+  text-align: center;
+  width: 30 px;
+  margin: 3px 6px;
+  padding: 0 6px;
+  background: teal;
+  color: #fff;
+  font-weight: normal;
+  font-size: .7 px;
+  border-radius: 10px;
+}
+
+ul {
+  padding: 5px;
+}

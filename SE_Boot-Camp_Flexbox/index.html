@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Todo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <h1 class="title">Todo List</h1>
+  <div class="btn-div">
+    <button id="btn">Add Task</button>
+  </div>
+  <div class="flex-grid" id="grid"></div>
+</body>
+</html>
+
+<script>
+  $(document).ready(function() {
+    $("#btn").click(function(){
+      $("#grid").append('<div class="col"><ul contenteditable="true"><li></li></ul></div>');
+    });
+  });
+  
+</script>
